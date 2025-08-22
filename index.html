@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Bipin Solanki - Best Trauma & Orthopedic Specialist in Delhi NCR</title>
+    <title>Best Bone ClinicDr. Bipin Solanki - Best Trauma & Orthopedic Specialist in Delhi NCR</title>
     <link rel="icon" type="image/png" href="images/bbc-logo.png">
     <link rel="shortcut icon" type="image/png" href="images/bbc-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +56,7 @@
             </div>
             
             <nav class="nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -86,6 +87,9 @@
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
     <!-- Hero Slider -->
     <section class="hero-slider" aria-label="Featured highlights">
         <button class="hero-arrow prev" aria-label="Previous slide">❮</button>
@@ -93,14 +97,14 @@
         <div class="slides">
             <!-- Slide 1: Doctor Intro -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('images/b1.png');"></div>
+                <div class="slide-bg" style="background-image: url('images/Banner.jpeg');"></div>
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Dr. Bipin Solanki<br>Orthopedic Specialist</h1>
+                        <h1><span class="doctor-name">Dr. Bipin Solanki</span><br><span class="doctor-title">Orthopedic Doctor</span></h1>
                         <p>Two decades of excellence in fracture management, joint replacement, and sports injuries with AIIMS trauma expertise. Expert treatment for complex trauma cases and advanced orthopedic procedures.</p>
                     </div>
                     <div class="hero-image">
-                        <img src="images/b1.png" alt="Dr. Bipin Solanki">
+                        <img src="images/doctor-profile.png" alt="Dr. Bipin Solanki">
                     </div>
                 </div>
             </div>
@@ -168,8 +172,8 @@
                     <div class="hero-content">
                         <h1>Spine & Sports Injury</h1>
                         <p>Comprehensive spine care and sports injury treatment with AIIMS expertise.</p>
-                    </div>
-                    <div class="hero-image">
+            </div>
+            <div class="hero-image">
                         <img src="images/b4.png" alt="Dr. Bipin Solanki - Spine Treatment">
                     </div>
                 </div>
@@ -385,19 +389,89 @@
                 <div class="insta-viewport">
                     <div class="insta-track">
                         <a class="insta-card" href="https://www.instagram.com/drbipinsolanki" target="_blank" rel="noopener">
-                            <img src="public/placeholder.jpg" alt="Instagram post 1">
+                            <div class="insta-post">
+                                <div class="insta-header">
+                                    <span class="insta-username">@drbipinsolanki</span>
+                                    <span class="insta-dots">•••</span>
+                                </div>
+                                <img src="images/b1.png" alt="Successful knee replacement case">
+                                <div class="insta-footer">
+                                    <div class="insta-actions">
+                                        <span class="insta-like">❤️</span>
+                                        <span class="insta-comment">💬</span>
+                                        <span class="insta-share">📤</span>
+                                    </div>
+                                    <div class="insta-caption">Successful knee replacement surgery! Patient back to walking pain-free after 3 months. #kneereplacement #orthopedics #delhi</div>
+                                </div>
+                            </div>
                         </a>
                         <a class="insta-card" href="https://www.instagram.com/drbipinsolanki" target="_blank" rel="noopener">
-                            <img src="public/placeholder-rap8i.png" alt="Instagram post 2">
+                            <div class="insta-post">
+                                <div class="insta-header">
+                                    <span class="insta-username">@drbipinsolanki</span>
+                                    <span class="insta-dots">•••</span>
+                                </div>
+                                <img src="images/b2.png" alt="Arthritis treatment success">
+                                <div class="insta-footer">
+                                    <div class="insta-actions">
+                                        <span class="insta-like">❤️</span>
+                                        <span class="insta-comment">💬</span>
+                                        <span class="insta-share">📤</span>
+                                    </div>
+                                    <div class="insta-caption">Conservative arthritis treatment showing great results! No surgery needed. #arthritis #conservativetreatment #orthopedics</div>
+                                </div>
+                            </div>
                         </a>
                         <a class="insta-card" href="https://www.instagram.com/drbipinsolanki" target="_blank" rel="noopener">
-                            <img src="public/placeholder-imiyk.png" alt="Instagram post 3">
+                            <div class="insta-post">
+                                <div class="insta-header">
+                                    <span class="insta-username">@drbipinsolanki</span>
+                                    <span class="insta-dots">•••</span>
+                                </div>
+                                <img src="images/b3.png" alt="Hip replacement surgery">
+                                <div class="insta-footer">
+                                    <div class="insta-actions">
+                                        <span class="insta-like">❤️</span>
+                                        <span class="insta-comment">💬</span>
+                                        <span class="insta-share">📤</span>
+                                    </div>
+                                    <div class="insta-caption">Advanced hip replacement technique. Patient walking the same day! #hipreplacement #surgery #recovery</div>
+                                </div>
+                            </div>
                         </a>
                         <a class="insta-card" href="https://www.instagram.com/drbipinsolanki" target="_blank" rel="noopener">
-                            <img src="images/sports-injury-treatment-thumbnail.png" alt="Instagram post 4">
+                            <div class="insta-post">
+                                <div class="insta-header">
+                                    <span class="insta-username">@drbipinsolanki</span>
+                                    <span class="insta-dots">•••</span>
+                                </div>
+                                <img src="images/b4.png" alt="Spine surgery case">
+                                <div class="insta-footer">
+                                    <div class="insta-actions">
+                                        <span class="insta-like">❤️</span>
+                                        <span class="insta-comment">💬</span>
+                                        <span class="insta-share">📤</span>
+                                    </div>
+                                    <div class="insta-caption">Complex spine surgery completed successfully. Patient's pain reduced by 90%! #spinesurgery #painrelief #orthopedics</div>
+                                </div>
+                            </div>
                         </a>
                         <a class="insta-card" href="https://www.instagram.com/drbipinsolanki" target="_blank" rel="noopener">
-                            <img src="images/spine-surgery-thumbnail.png" alt="Instagram post 5">
+                            <div class="insta-post">
+                                <div class="insta-header">
+                                    <span class="insta-username">@drbipinsolanki</span>
+                                    <span class="insta-dots">•••</span>
+                                </div>
+                                <img src="images/b5.png" alt="Sports injury treatment">
+                                <div class="insta-footer">
+                                    <div class="insta-actions">
+                                        <span class="insta-like">❤️</span>
+                                        <span class="insta-comment">💬</span>
+                                        <span class="insta-share">📤</span>
+                                    </div>
+                                    <div class="insta-caption">Sports injury treatment - athlete back to training in 6 weeks! #sportsinjury #recovery #athlete</div>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 </div>

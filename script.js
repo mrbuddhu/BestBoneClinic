@@ -1,5 +1,35 @@
 // Mobile menu toggle and enhanced functionality
 document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu functionality
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle')
+  const navMenu = document.querySelector('.nav-menu')
+  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay')
+  
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active')
+      mobileMenuOverlay.classList.toggle('active')
+      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : ''
+    })
+    
+    // Close menu when clicking overlay
+    mobileMenuOverlay.addEventListener('click', () => {
+      navMenu.classList.remove('active')
+      mobileMenuOverlay.classList.remove('active')
+      document.body.style.overflow = ''
+    })
+    
+    // Close menu when clicking on a link
+    const navLinks = navMenu.querySelectorAll('a')
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active')
+        mobileMenuOverlay.classList.remove('active')
+        document.body.style.overflow = ''
+      })
+    })
+  }
+
   // Smooth scrolling for anchor links
   const links = document.querySelectorAll('a[href^="#"]')
   links.forEach((link) => {
