@@ -492,12 +492,32 @@ body {
     .hero-slider .hero-content h1 {
         text-align: center;
         margin-bottom: 15px;
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 1.3;
     }
     .hero-slider .hero-content p {
         text-align: center;
         margin-bottom: 0;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    /* Additional mobile banner fixes */
+    .hero-slider {
+        height: auto;
+        min-height: 450px;
+    }
+    
+    .hero-slider .slide {
+        height: auto;
+        min-height: 450px;
+        padding: 15px 0;
+    }
+    
+    .hero-slider .slide-bg {
+        background-position: center center !important;
+        background-size: cover !important;
+        min-height: 100%;
     }
     .hero-arrow {
         width: 35px;
@@ -2327,6 +2347,16 @@ body {
   margin: 0 auto;
   height: auto;
 }
+
+  .footer-logo a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-logo a:hover {
+    transform: scale(1.05);
+  }
   
   .footer-links h4 {
     margin-bottom: 15px;
@@ -2379,6 +2409,134 @@ body {
   
   .footer {
     padding: 30px 15px;
+  }
+  
+  /* Additional mobile footer text centering fixes */
+  .footer-section h4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section ul {
+    text-align: center;
+  }
+  
+  .footer-section ul li {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer-section ul li a {
+    text-align: center;
+  }
+  
+  .footer-contact-info {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .footer-contact-info i {
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+  
+  /* Contact page mobile fixes */
+  .contact-details {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .contact-item {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-text {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-text h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-text p {
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-text a {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .appt-banner .container {
+    padding: 0 15px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .appt-grid {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .appt-copy {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  
+  .appt-copy h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+  
+  /* Extra small mobile devices - additional contact page fixes */
+  @media (max-width: 480px) {
+    .contact-item {
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .contact-text h4 {
+      font-size: 15px;
+    }
+    
+    .contact-text p {
+      font-size: 13px;
+    }
+    
+    .contact-text a {
+      font-size: 13px;
+    }
+    
+    .appt-copy h2 {
+      font-size: 22px;
+    }
+    
+    .appt-copy {
+      padding: 15px 10px;
+    }
+    
+    .appt-banner .container {
+      padding: 0 10px;
+    }
   }
 }
 
@@ -2934,6 +3092,27 @@ body {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-contact-info {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer-contact-info i {
+    margin-right: 8px;
+  }
+  
+  .footer-contact-info span {
+    text-align: center;
+  }
+  
+  .footer-contact-info a {
     text-align: center;
   }
   
@@ -3811,5 +3990,28 @@ body {
 @media (max-width: 767px) {
     .insta-nav-arrow {
         display: none;
+    }
+}
+
+/* Extra small mobile devices - additional banner fixes */
+@media (max-width: 480px) {
+    .hero-slider .hero-content h1 {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    .hero-slider .hero-content p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    .hero-slider {
+        min-height: 400px;
+    }
+    .hero-slider .slide {
+        min-height: 400px;
+        padding: 10px 0;
+    }
+    .hero-slider .slide-bg {
+        background-position: center center !important;
+        background-size: cover !important;
     }
 }
