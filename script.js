@@ -368,3 +368,176 @@ BBC Best Bone Clinic Website
     update()
   }
 })
+
+// Instagram Reels Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const instaTrack = document.querySelector('.insta-track');
+    const instaCards = document.querySelectorAll('.insta-embed-card');
+    const prevBtn = document.querySelector('.insta-nav-arrow.prev');
+    const nextBtn = document.querySelector('.insta-nav-arrow.next');
+    const swipeDots = document.querySelectorAll('.insta-swipe-dot');
+    
+    let currentSlide = 0;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    
+    // Get number of visible cards based on screen size
+    function getVisibleCards() {
+        if (window.innerWidth >= 1024) return 4; // Desktop
+        if (window.innerWidth >= 768) return 2;  // Tablet
+        return 1; // Mobile
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        const visibleCards = getVisibleCards();
+        const cardWidth = instaCards[0].offsetWidth + 20; // Include gap
+        const translateX = -currentSlide * cardWidth;
+        
+        instaTrack.style.transform = `translateX(${translateX}px)`;
+        
+        // Update swipe indicators
+        swipeDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Update navigation buttons
+        prevBtn.style.display = currentSlide === 0 ? 'none' : 'flex';
+        nextBtn.style.display = currentSlide >= instaCards.length - visibleCards ? 'none' : 'flex';
+    }
+    
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        const visibleCards = getVisibleCards();
+        const maxSlide = Math.max(0, instaCards.length - visibleCards);
+        currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        const visibleCards = getVisibleCards();
+        if (currentSlide < instaCards.length - visibleCards) {
+            currentSlide++;
+            updateCarousel();
+        }
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    }
+    
+    // Touch/swipe functionality
+    function touchStart(e) {
+        if (window.innerWidth <= 767) { // Only on mobile
+            isDragging = true;
+            startPos = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+            instaTrack.style.transition = 'none';
+        }
+    }
+    
+    function touchMove(e) {
+        if (!isDragging) return;
+        
+        const currentPosition = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const diff = currentPosition - startPos;
+        const cardWidth = instaCards[0].offsetWidth + 20;
+        
+        currentTranslate = prevTranslate + diff;
+        
+        // Limit dragging
+        const maxTranslate = 0;
+        const minTranslate = -(instaCards.length - 1) * cardWidth;
+        currentTranslate = Math.max(minTranslate, Math.min(maxTranslate, currentTranslate));
+        
+        instaTrack.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    
+    function touchEnd() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        instaTrack.style.transition = 'transform 0.3s ease';
+        
+        const cardWidth = instaCards[0].offsetWidth + 20;
+        const movedBy = currentTranslate - prevTranslate;
+        
+        // Determine if slide should change
+        if (Math.abs(movedBy) > cardWidth * 0.3) {
+            if (movedBy < 0 && currentSlide < instaCards.length - 1) {
+                currentSlide++;
+            } else if (movedBy > 0 && currentSlide > 0) {
+                currentSlide--;
+            }
+        }
+        
+        prevTranslate = -currentSlide * cardWidth;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    // Swipe dot navigation
+    swipeDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Touch/swipe events
+    instaTrack.addEventListener('mousedown', touchStart);
+    instaTrack.addEventListener('mousemove', touchMove);
+    instaTrack.addEventListener('mouseup', touchEnd);
+    instaTrack.addEventListener('mouseleave', touchEnd);
+    
+    instaTrack.addEventListener('touchstart', touchStart);
+    instaTrack.addEventListener('touchmove', touchMove);
+    instaTrack.addEventListener('touchend', touchEnd);
+    
+    // Prevent context menu on long press
+    instaTrack.addEventListener('contextmenu', e => e.preventDefault());
+    
+    // Initialize carousel
+    updateCarousel();
+    
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        const visibleCards = getVisibleCards();
+        const maxSlide = Math.max(0, instaCards.length - visibleCards);
+        currentSlide = Math.min(currentSlide, maxSlide);
+        updateCarousel();
+    });
+});
+
+// Audio control functionality
+function toggleAudio(control) {
+    const card = control.closest('.insta-embed-card');
+    const iframe = card.querySelector('iframe');
+    const audioIcon = control.querySelector('.audio-icon');
+    
+    // Toggle audio icon
+    if (control.classList.contains('muted')) {
+        control.classList.remove('muted');
+        audioIcon.innerHTML = `
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.7538 17.0039 12.2C17.0039 13.6462 16.4774 15.0024 15.54 15.94" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        `;
+    } else {
+        control.classList.add('muted');
+        audioIcon.innerHTML = `
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        `;
+    }
+    
+    // Note: Instagram embeds handle their own audio, this is just for visual feedback
+    // The actual audio control would need to be handled by Instagram's embed API
+}
