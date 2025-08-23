@@ -161,7 +161,8 @@ body {
 .logo img {
   width: 180px;
   height: auto;
-  max-height: 90px;
+  max-height: 80px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -2171,8 +2172,9 @@ body {
   }
   
   .logo img {
-    width: 120px;
-    max-height: 50px;
+    width: 80px;
+    max-height: 80px;
+    object-fit: contain;
   }
   
   .nav-menu {
