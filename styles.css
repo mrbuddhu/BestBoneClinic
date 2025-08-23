@@ -21,6 +21,10 @@ a:hover {
   color: #1f5a5a;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .map-link:hover, .phone-link:hover, .whatsapp-link:hover {
