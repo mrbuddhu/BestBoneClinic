@@ -514,11 +514,11 @@ body {
         padding: 15px 0;
     }
     
-    .hero-slider .slide-bg {
-        background-position: center center !important;
-        background-size: cover !important;
-        min-height: 100%;
-    }
+                    .hero-slider .slide-bg {
+                    background-position: right center !important;
+                    background-size: cover !important;
+                    min-height: 100%;
+                }
     .hero-arrow {
         width: 35px;
         height: 35px;
@@ -4010,8 +4010,115 @@ body {
         min-height: 400px;
         padding: 10px 0;
     }
-    .hero-slider .slide-bg {
-        background-position: center center !important;
-        background-size: cover !important;
+                        .hero-slider .slide-bg {
+                        background-position: right center !important;
+                        background-size: cover !important;
+                    }
+}
+
+/* Instagram embed optimization */
+.instagram-media {
+    max-height: 400px !important;
+    min-height: 300px !important;
+    overflow: hidden !important;
+}
+
+.instagram-media iframe {
+    max-height: 400px !important;
+    min-height: 300px !important;
+}
+
+.insta-embed-card {
+    max-height: 400px !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.insta-embed-card .instagram-media {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+/* Reduce Instagram embed height */
+.insta-embed {
+    height: 400px !important;
+    max-height: 400px !important;
+}
+
+/* Mobile optimization for Instagram embeds */
+@media (max-width: 767px) {
+    .instagram-media {
+        max-height: 350px !important;
+        min-height: 250px !important;
+    }
+    
+    .insta-embed {
+        height: 350px !important;
+        max-height: 350px !important;
+    }
+    
+    .insta-embed-card {
+        max-height: 350px !important;
+    }
+}
+
+/* Instagram metrics styling */
+.insta-video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.insta-metrics {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.metric-item svg {
+    color: #ff3040;
+}
+
+.metric-item:nth-child(2) svg {
+    color: #1da1f2;
+}
+
+.metric-item:nth-child(3) svg {
+    color: #25d366;
+}
+
+/* Mobile optimization for metrics */
+@media (max-width: 767px) {
+    .insta-metrics {
+        bottom: 8px;
+        left: 8px;
+        gap: 12px;
+        padding: 6px 10px;
+    }
+    
+    .metric-item {
+        font-size: 11px;
+        gap: 3px;
+    }
+    
+    .metric-item svg {
+        width: 14px;
+        height: 14px;
     }
 }
