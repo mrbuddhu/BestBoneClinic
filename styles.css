@@ -409,6 +409,14 @@ body {
     .hero-slider .hero-content p { font-size: 15px; max-width: 300px; }
 }
 
+/* Hide navigation dots on all devices */
+.hero-dots {
+    display: none !important;
+}
+.insta-swipe-indicators {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .hero-slider .hero-content h1 { font-size: 24px; max-width: 100%; margin-bottom: 15px; }
     .hero-slider .hero-content p { font-size: 14px; max-width: 100%; margin-bottom: 20px; }
