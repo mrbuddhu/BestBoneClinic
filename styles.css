@@ -3957,6 +3957,10 @@ body {
         margin: 0 10px;
     }
     
+    .insta-embed {
+        height: 600px; /* Increased height for mobile to match Instagram reel proportions */
+    }
+    
     .insta-swipe-indicators {
         display: flex;
     }
