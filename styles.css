@@ -299,6 +299,17 @@ body {
   transform: translateY(0);
 }
 
+.dropdown-toggle::after {
+  content: "▼";
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
 .dropdown-menu li {
   margin: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -1482,7 +1493,7 @@ body {
 /* Testimonials redesigned */
 .testimonials-section { background: #ffffff; padding: 56px 0; }
 .testimonials-section h2 { text-align: center; color: #145f5f; font-size: 32px; margin-bottom: 24px; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .testimonial-card { 
   background: #fff; 
   border: 1px solid #e7f2f2; 
@@ -1517,6 +1528,13 @@ body {
 
 .testimonial-card:hover .testimonial-author {
   color: #1f5a5a;
+}
+
+.testimonial-details {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
 }
 
 /* Testimonial card hover effects */
@@ -2177,6 +2195,40 @@ body {
     transform: translateX(0);
   }
   
+  /* Mobile dropdown functionality */
+  .dropdown.active .dropdown-menu {
+    display: block;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background-color: rgba(45, 125, 125, 0.1);
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  
+  .dropdown.active .dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dropdown.active .dropdown-menu a {
+    color: #2d7d7d;
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+  
+  .dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-toggle::after {
+    content: "▼";
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+  }
+  
   .nav-menu ul {
     flex-direction: column;
     gap: 20px;
@@ -2388,6 +2440,13 @@ body {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 }
 
@@ -4333,5 +4392,98 @@ body {
     
     .case-study-image {
         height: 150px;
+    }
+}
+
+/* Privacy Policy Page Styles */
+.privacy-content {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.policy-sections {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.policy-section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.policy-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #20c997;
+    padding-bottom: 10px;
+}
+
+.policy-section p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.policy-section li {
+    color: #666;
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.policy-section li:before {
+    content: "•";
+    color: #20c997;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 6px;
+}
+
+.contact-details {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.contact-details p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.contact-details a {
+    color: #20c997;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsive for privacy policy */
+@media (max-width: 767px) {
+    .privacy-content {
+        padding: 40px 0;
+    }
+    
+    .policy-section {
+        padding: 20px;
+        margin: 0 15px 20px 15px;
+    }
+    
+    .policy-section h3 {
+        font-size: 1.3rem;
     }
 }
