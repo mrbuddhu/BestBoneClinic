@@ -2452,6 +2452,12 @@ body {
 
 @media (max-width: 480px) {
   /* Extra small devices */
+  
+  /* Ensure testimonials show one per row on mobile */
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
   .hero-slider .slide .container {
     padding: 20px 15px;
     min-height: 300px;
