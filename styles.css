@@ -830,36 +830,80 @@ body {
 .insta-track { display: flex; gap: 14px; transition: transform .4s ease; }
 .insta-card { 
   flex: 0 0 280px; 
-  border-radius: 16px; 
+  border-radius: 12px; 
   overflow: hidden; 
   box-shadow: 
-    0 4px 6px rgba(0,0,0,0.05),
-    0 10px 25px rgba(0,0,0,0.08),
-    0 20px 40px rgba(0,0,0,0.03);
+    0 2px 8px rgba(0,0,0,0.1),
+    0 4px 16px rgba(0,0,0,0.08);
   background: white;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform: translateY(0) rotateX(0);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  border: 1px solid #dbdbdb;
 }
 .insta-post { display: flex; flex-direction: column; }
-.insta-header { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid #f0f0f0; }
-.insta-username { font-weight: 600; font-size: 14px; color: #262626; }
-.insta-dots { font-size: 16px; color: #8e8e8e; }
-.insta-card img { display: block; width: 100%; height: 200px; object-fit: cover; }
+.insta-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px 16px; 
+  border-bottom: 1px solid #dbdbdb; 
+  background: white;
+}
+.insta-username { 
+  font-weight: 600; 
+  font-size: 14px; 
+  color: #262626; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.insta-username::before {
+  content: "📱";
+  font-size: 16px;
+}
+.insta-dots { font-size: 18px; color: #8e8e8e; cursor: pointer; }
+.insta-card img { 
+  display: block; 
+  width: 100%; 
+  height: 320px; 
+  object-fit: cover; 
+  background: #fafafa;
+}
 
 .insta-card:hover {
-  transform: translateY(-8px) rotateX(2deg);
+  transform: translateY(-2px);
   box-shadow: 
-    0 8px 15px rgba(0,0,0,0.08),
-    0 20px 40px rgba(0,0,0,0.12),
-    0 30px 60px rgba(0,0,0,0.06),
-    0 0 0 1px rgba(45,125,125,0.1);
+    0 4px 12px rgba(0,0,0,0.15),
+    0 8px 24px rgba(0,0,0,0.1);
 }
-.insta-footer { padding: 12px; }
-.insta-actions { display: flex; gap: 12px; margin-bottom: 8px; }
-.insta-like, .insta-comment, .insta-share { font-size: 18px; cursor: pointer; }
-.insta-caption { font-size: 13px; color: #262626; line-height: 1.4; }
+.insta-footer { 
+  padding: 16px; 
+  background: white;
+}
+.insta-actions { 
+  display: flex; 
+  gap: 16px; 
+  margin-bottom: 12px; 
+  align-items: center;
+}
+.insta-like, .insta-comment, .insta-share { 
+  font-size: 24px; 
+  cursor: pointer; 
+  transition: transform 0.2s ease;
+}
+.insta-like:hover, .insta-comment:hover, .insta-share:hover {
+  transform: scale(1.1);
+}
+.insta-caption { 
+  font-size: 14px; 
+  color: #262626; 
+  line-height: 1.5; 
+  margin-bottom: 8px;
+}
+.insta-caption strong {
+  font-weight: 600;
+  color: #262626;
+}
 .insta-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.95); border: none; width: 36px; height: 36px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,.15); cursor: pointer; }
 .insta-arrow.prev { left: -10px; }
 .insta-arrow.next { right: -10px; }
@@ -2167,11 +2211,22 @@ body {
   }
   
   .insta-track {
-    gap: 10px;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .insta-track::-webkit-scrollbar {
+    display: none;
   }
   
   .insta-card {
-    flex: 0 0 250px;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-width: 280px;
   }
   
   /* Testimonials */
@@ -2202,6 +2257,11 @@ body {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+    margin: 0 auto;
   }
   
   .footer-logo img {
@@ -2255,7 +2315,8 @@ body {
   }
   
   .insta-card {
-    flex: 0 0 200px;
+    flex: 0 0 100%;
+    min-width: 260px;
   }
   
   .footer {
