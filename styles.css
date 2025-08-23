@@ -2441,6 +2441,38 @@ body {
     gap: 10px;
     text-align: center;
   }
+  
+  /* Mobile responsive for full-width content */
+  .full-width-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .full-width-content .doctor-image {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .full-width-content .content-text {
+    flex: none;
+  }
+  
+  /* Mobile responsive for why-choose-card */
+  .why-choose-card {
+    padding: 25px 20px;
+  }
+  
+  .why-choose-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .why-choose-card li {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -2806,6 +2838,78 @@ body {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+/* Full Width Content Styling */
+.full-width-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.full-width-content .doctor-image {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+.full-width-content .content-text {
+  flex: 1;
+}
+
+/* Why Choose Section Styling */
+.why-choose-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Why Choose Card Styling */
+.why-choose-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid #e9ecef;
+  max-width: 600px;
+  width: 100%;
+}
+
+.why-choose-card h3 {
+  color: #1f5a5a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.why-choose-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-choose-card li {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.why-choose-card li:before {
+  content: "✅";
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.why-choose-card strong {
+  color: #1f5a5a;
+  font-weight: 600;
 }
 
 .consult-btn {
