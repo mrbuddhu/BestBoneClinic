@@ -966,6 +966,10 @@ body {
 .insta-arrow { display: none !important; }
 .insta-nav-arrow { display: none !important; }
 
+/* Hide Instagram navigation arrows on all devices */
+.insta-arrow { display: none !important; }
+.insta-nav-arrow { display: none !important; }
+
 /* About Section */
 .about-section {
   padding: 80px 0;
@@ -3964,6 +3968,19 @@ body {
     .insta-swipe-indicators {
         display: flex;
     }
+    
+
+    
+    /* Make banner text headings bolder from 2nd slide onwards on mobile */
+    .hero-slider .slide:not(:first-child) .hero-content h1 {
+        font-weight: 800 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    }
+    
+    .hero-slider .slide:not(:first-child) .hero-content p {
+        font-weight: 600 !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+    }
 }
 
 /* Swipe Navigation Arrows */
@@ -4138,5 +4155,183 @@ body {
     .metric-item svg {
         width: 14px;
         height: 14px;
+    }
+}
+
+/* Video Categories Section */
+.video-categories {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.video-categories h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.category-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.category-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.category-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Case Studies Section */
+.case-studies-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.case-studies-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.case-study-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-study-card:hover .case-study-image img {
+    transform: scale(1.05);
+}
+
+.case-study-content {
+    padding: 25px;
+}
+
+.case-study-content h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.case-study-details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.case-study-story {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.case-study-results h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.case-study-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.case-study-results li {
+    color: #666;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.case-study-results li:before {
+    content: "✓";
+    color: #20c997;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Mobile responsive for video categories and case studies */
+@media (max-width: 767px) {
+    .video-categories h2,
+    .case-studies-section h2 {
+        font-size: 2rem;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .category-card,
+    .case-study-card {
+        margin: 0 15px;
+    }
+    
+    .case-study-image {
+        height: 150px;
     }
 }
