@@ -242,6 +242,9 @@
             <h2 class="section-title">Services of a <span class="accent">Best Trauma Surgeon</span></h2>
             <div class="services-grid-tight">
                 <div class="service-list-card">
+                    <div class="service-image">
+                        <img src="images/ot1.jpg" alt="Trauma & Emergency Care">
+                    </div>
                     <ul>
                         <li>Accident & emergency trauma care</li>
                         <li>Fracture & dislocation treatment</li>
@@ -253,6 +256,9 @@
                     </ul>
                 </div>
                 <div class="service-list-card">
+                    <div class="service-image">
+                        <img src="images/office.jpg" alt="Sports Injury Care">
+                    </div>
                     <h3 class="mini-title">🏅 Sports Injury Care</h3>
                     <ul>
                         <li>Sprain & Strain Treatment</li>
@@ -648,6 +654,14 @@
         </div>
     </footer>
 
+    <!-- EmailJS for appointment form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your service ID
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

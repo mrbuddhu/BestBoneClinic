@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = formData.get('message')
       
       // Validation
-      if (!name || !phone || !service || !urgency || !preferredDate || !preferredTime) {
+      if (!name || !phone || !preferredDate || !preferredTime) {
         alert("Please fill in all required fields marked with *")
         return
       }
@@ -128,8 +128,60 @@ Patient Details:
 - Email: ${email || 'Not provided'}
 
 Appointment Details:
-- Service Required: ${service}
-- Urgency Level: ${urgency}
+- Service Required: ${service || 'General Consultation'}
+- Urgency Level: ${urgency || 'Normal'}
+- Preferred Date: ${preferredDate}
+- Preferred Time: ${preferredTime}
+- Additional Message: ${message || 'No additional message'}
+
+Please contact the patient within 24 hours to confirm the appointment.
+
+Best regards,
+BBC Best Bone Clinic Website
+    `.trim()
+
+    // Method 1: Try to send via EmailJS (if configured)
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send('service_id', 'template_id', {
+        to_email: 'bipinsolanki007@gmail.com',
+        to_name: 'Dr. Bipin Solanki',
+        from_name: name,
+        from_email: email || 'website@bestboneclinic.com',
+        from_phone: phone,
+        service: service || 'General Consultation',
+        urgency: urgency || 'Normal',
+        preferred_date: preferredDate,
+        preferred_time: preferredTime,
+        message: message || 'No additional message',
+        subject: `New Appointment Request - ${name}`
+      })
+      .then(function(response) {
+        console.log('Email sent successfully:', response);
+      })
+      .catch(function(error) {
+        console.log('Email sending failed:', error);
+        // Fallback to mailto
+        fallbackEmailMethod(name, phone, email, service, urgency, preferredDate, preferredTime, message);
+      });
+    } else {
+      // Method 2: Fallback to mailto link
+      fallbackEmailMethod(name, phone, email, service, urgency, preferredDate, preferredTime, message);
+    }
+  }
+
+  // Fallback email method using mailto
+  function fallbackEmailMethod(name, phone, email, service, urgency, preferredDate, preferredTime, message) {
+    const emailBody = `
+New Appointment Request Received
+
+Patient Details:
+- Name: ${name}
+- Phone: ${phone}
+- Email: ${email || 'Not provided'}
+
+Appointment Details:
+- Service Required: ${service || 'General Consultation'}
+- Urgency Level: ${urgency || 'Normal'}
 - Preferred Date: ${preferredDate}
 - Preferred Time: ${preferredTime}
 - Additional Message: ${message || 'No additional message'}

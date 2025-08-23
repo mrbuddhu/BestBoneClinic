@@ -91,15 +91,19 @@
         <div class="container">
             <h1>Get In Touch</h1>
             <h2>BBC Best Bone Clinic – Comprehensive Trauma & Orthopedic Care in Delhi NCR</h2>
-            <p>Yupiter Hospital, Safdarjung Enclave, J-4, Green Park Ext Rd, CH Harsukh Marg, Green Park Extension, Green Park, New Delhi, Delhi 110016</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="contact-content-section">
+    <!-- Integrated Contact & Appointment Section -->
+    <section class="appt-banner">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
+            <div class="appt-grid">
+                <div class="appt-copy">
+                    <span class="badge">Contact & Appointment</span>
+                    <h2>Get In Touch & Make an Appointment</h2>
+                    <p><strong>BBC Best Bone Clinic — Comprehensive Orthopedic Care in South Delhi</strong></p>
+                    
+                    <!-- Contact Information -->
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
@@ -136,161 +140,60 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="appointment-form">
+                <div class="appt-card">
                     <h3>Book an Appointment</h3>
                     <form id="appointmentForm">
-                        <div class="form-group">
+                        <div class="form-row">
                             <input type="text" name="name" placeholder="Full Name *" required>
                         </div>
-                        
                         <div class="form-row">
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Phone Number *" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                            </div>
+                            <input type="tel" name="phone" placeholder="Phone *" required>
+                            <input type="email" name="email" placeholder="Email">
                         </div>
-                        
                         <div class="form-row">
-                            <div class="form-group">
-                                <select name="service" required>
-                                    <option value="">Select Service *</option>
-                                    <option value="trauma-fracture">Trauma & Fracture Care</option>
-                                    <option value="joint-replacement">Joint Replacement</option>
-                                    <option value="spine-sports">Spine & Sports Injury</option>
-                                    <option value="conservative">Conservative Treatment</option>
-                                    <option value="emergency">Emergency Care</option>
-                                    <option value="consultation">General Consultation</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select name="urgency" required>
-                                    <option value="">Urgency Level *</option>
-                                    <option value="emergency">Emergency (24/7)</option>
-                                    <option value="urgent">Urgent (Same Day)</option>
-                                    <option value="normal">Normal (Next Available)</option>
-                                </select>
-                            </div>
+                            <input type="date" name="preferred_date" placeholder="Date *" required>
+                            <input type="time" name="preferred_time" placeholder="Time *" required>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="date" name="preferred_date" placeholder="Preferred Date" required>
-                            </div>
-                            <div class="form-group">
-                                <select name="preferred_time" required>
-                                    <option value="">Preferred Time *</option>
-                                    <option value="morning">Morning (9 AM - 12 PM)</option>
-                                    <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
-                                    <option value="evening">Evening (3 PM - 6 PM)</option>
-                                    <option value="anytime">Any Time Available</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Describe your condition or symptoms..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Book Appointment</button>
+                        <textarea name="message" placeholder="Message"></textarea>
+                        <button type="submit" class="btn-primary">Book an Appointment</button>
                     </form>
-                    
-                    <div class="appointment-options">
-                        <h4>Quick Appointment Options:</h4>
-                        <div class="quick-buttons">
-                            <a href="https://wa.me/919717289689?text=Hi, I need an appointment with Dr. Bipin Solanki for trauma care consultation." class="whatsapp-btn" target="_blank">
-                                📱 WhatsApp Appointment
-                            </a>
-                            <a href="tel:+919717289689" class="call-btn">
-                                📞 Call Now: +91 9717289689
-                            </a>
-                            <a href="mailto:bipinsolanki007@gmail.com?subject=Appointment Request&body=Hi, I would like to book an appointment with Dr. Bipin Solanki." class="email-btn" target="_blank">
-                                📧 Email Appointment
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- FAQ Section (same as homepage) -->
+    <section class="faq-section faq--bars">
         <div class="container">
             <h2>FAQ's</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What are the common causes of trauma and fractures?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Trauma and fractures can result from <strong>road accidents, falls, sports injuries, workplace accidents, and osteoporosis</strong>. Proper trauma management is essential for optimal recovery and preventing complications.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>What are the common causes of hip pain?</h3></div>
+                    <div class="faq-answer"><p>Hip pain may be due to arthritis, labral tears, tendonitis, bursitis, or trauma. Evaluation identifies the cause and guides treatment.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Which doctor is best for trauma and fracture care?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Dr. Bipin Solanki is a highly skilled <strong>trauma and fracture specialist in Delhi NCR</strong>, renowned for his expertise in <strong>advanced trauma management and conservative treatment approaches</strong>. With extensive experience at <strong>AIIMS Trauma Centre</strong> and international training, he ensures <strong>optimal outcomes, faster recovery, and long-lasting results</strong>. His <strong>patient-first approach</strong>, combined with evidence-based treatments, makes him a trusted choice for <strong>trauma and orthopedic care</strong> in Delhi NCR.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>Which doctor is best for knee replacement?</h3></div>
+                    <div class="faq-answer"><p>Choose an experienced joint replacement specialist with strong outcomes and patient‑centric care like Dr. Bipin Solanki.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can conservative treatment help avoid surgery?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, conservative treatment can often help avoid surgery for many orthopedic conditions. <strong>Dr. Bipin Solanki</strong> strongly believes in healing without unnecessary surgery and will evaluate your condition to recommend the best treatment option for lasting relief and improved mobility.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>Can orthopedic surgery help with chronic pain?</h3></div>
+                    <div class="faq-answer"><p>When conservative treatment fails, procedures such as arthroscopy or joint replacement can relieve pain and restore function.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What is advanced trauma management?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Advanced trauma management involves specialized techniques and protocols to treat complex fractures and trauma cases with minimal complications. This approach leads to better outcomes, quicker recovery, and reduced risk of long-term disability. <strong>Dr. Bipin Solanki</strong> utilizes these techniques with his AIIMS experience and international training to ensure the best outcomes for his patients.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>What is minimally invasive orthopedic surgery?</h3></div>
+                    <div class="faq-answer"><p>It uses smaller incisions and specialized tools (e.g., arthroscopy), leading to less pain and faster recovery.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What types of trauma treatments are available?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p><strong>Conservative Treatment:</strong> Non-surgical approaches including immobilization, physical therapy, and medication.<br>
-                        <strong>Surgical Treatment:</strong> When necessary, advanced surgical techniques for complex fractures.<br>
-                        <strong>Rehabilitation:</strong> Comprehensive post-treatment care and physical therapy.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>What types of knee replacements are available?</h3></div>
+                    <div class="faq-answer"><p>Options include partial and total knee replacement, with implant selection tailored to your anatomy and activity level.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What is the procedure for fracture treatment?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Fracture treatment begins with proper diagnosis and assessment. Depending on the severity, treatment may involve <strong>immobilization, reduction, or surgical fixation</strong>. The procedure typically takes <strong>30 minutes to 2 hours</strong>, depending on complexity, and helps restore bone alignment and function.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>What is the procedure for knee replacement surgery?</h3></div>
+                    <div class="faq-answer"><p>The damaged cartilage and bone are resurfaced and replaced with an implant; most patients walk the same day.</p></div>
                 </div>
-                
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What are the recovery times after trauma treatment?</h3>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Recovery time depends on the type and severity of trauma, but most patients can resume daily activities within a few weeks to several months. <strong>Dr. Bipin Solanki</strong> creates personalized rehabilitation plans to ensure optimal recovery and return to normal function.</p>
-                    </div>
+                    <div class="faq-question"><span class="faq-icon">+</span><h3>What are the recovery times after knee or shoulder surgery?</h3></div>
+                    <div class="faq-answer"><p>Recovery varies by procedure; many resume daily activities within weeks and full sports in 3–6 months with rehab.</p></div>
                 </div>
             </div>
         </div>
@@ -358,6 +261,14 @@
         </div>
     </footer>
 
+    <!-- EmailJS for appointment form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your service ID
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
