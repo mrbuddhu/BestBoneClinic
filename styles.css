@@ -394,6 +394,7 @@ body {
 .hero-slider .slide:first-child .slide-bg::after { background: rgba(0,0,0,0.8); }
 .hero-slider .slide:first-child .slide-bg { filter: blur(3px); }
 .hero-slider .hero-content h1 { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.3); max-width: 260px; font-size: 28px; line-height: 1.1; margin-bottom: 20px; overflow: hidden; white-space: normal; word-wrap: break-word; }
+.hero-slider .hero-content h1 { white-space: nowrap; }
 .hero-slider .hero-content .doctor-name { font-size: 36px; font-weight: 700; }
 .hero-slider .hero-content .doctor-title { font-size: 24px; font-weight: 500; }
 .hero-slider .hero-content p { color: #e6f5f5; max-width: 350px; font-size: 18px; line-height: 1.5; margin-bottom: 0; }
@@ -426,10 +427,14 @@ body {
     .hero-slider { 
         margin: 15px 8px; 
         border-radius: 15px;
+        min-height: 500px;
     }
     .hero-slider .slide .container { 
-        padding: 25px 15px; 
-        min-height: 350px;
+        padding: 20px 15px; 
+        min-height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .hero-slider .hero-content h1 { 
         font-size: 20px; 
@@ -439,13 +444,19 @@ body {
     .hero-slider .hero-content p { 
         font-size: 13px; 
         line-height: 1.4; 
+        margin-bottom: 20px;
+    }
+    .hero-slider .hero-image { 
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .hero-slider .hero-image img { 
-        max-width: 150px;
+        max-width: 180px;
+        height: auto;
     }
     .hero-slider .hero-content {
         padding: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 }
 .hero-slider .hero-image { display: none; }
@@ -470,6 +481,8 @@ body {
         min-height: 400px;
         position: relative;
         z-index: 2;
+        justify-content: center;
+        align-items: center;
     } 
     /* Hide hero images on mobile for slides 2-6 to prevent double images */
     .hero-slider .slide:not(:first-child) .hero-image {
